@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({ limit: '10mb', extended: false }))
 
 // maniobra para deployar en heroku pero sin conectar la local
 
-if (process.env.DATABASE_URL=="mongodb://localhost/mybrary") {
+if (process.env.DATABASE_URL!=="mongodb://localhost/mybrary") {
     const mongoose = require('mongoose')
     mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true })
     const db = mongoose.connection
