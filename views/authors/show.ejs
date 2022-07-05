@@ -6,7 +6,7 @@
   <h2>Books by Author</h2>
   <div>
     <% booksByAuthor.forEach(book => { %>
-        <img height="150" width="100" src="<%= book.coverImagePath %>">
-        <% }) %>
+        <%- include("../partials/bookPreview", {book: book}) %>
+    <% }) %>
   </div>
 <% } %>
