@@ -1,24 +1,24 @@
 <h2><%= book.title %></h2>
-
-<img height="150" width="100" src="<%= book.coverImagePath %>">
-<div>
-  <div>Author</div>
-  <div><%= book.author.name %></div>
+<div class="book-details">
+  <div>
+    <img class="book-cover" src="<%= book.coverImagePath %>">
+    <div class="book-details-btn-grid">
+      <a class="btn btn-primary" href="/books/<%= book.id %>/edit">Edit</a>
+      <%- include("../partials/deleteForm", { url: `/books/${book.id}`}) %>
+      <a class="btn btn-primary book-details-author-btn" href="/authors/<%= book.author.id %>">View Author</a>
+    </div>
+  </div>
+  <div class="book-details-grid">
+    <div class="book-details-label">Author:</div>
+    <div><%= book.author.name %></div>
+    <div class="book-details-label">Publish Date:</div>
+    <% dd = `${book.publishDate.getDate()<10?"0":""}${book.publishDate.getDate()}` %>
+    <% mm = `${book.publishDate.getMonth()<10?"0":""}${book.publishDate.getMonth()}` %>
+    <% yyyy = book.publishDate.getFullYear() %>
+    <div><%= `${dd}/${mm}/${yyyy}` %></div>
+    <div class="book-details-label">Page Count:</div>
+    <div><%= book.pageCount %></div>
+    <div class="book-details-label">Description:</div>
+    <div><%= book.description %></div>
+  </div>
 </div>
-<div>
-  <div>Publish Date</div>
-  <div><%= book.publishDate.toDateString() %></div>
-</div>
-<div>
-  <div>Page Count</div>
-  <div><%= book.pageCount %></div>
-</div>
-<div>
-  <div>Description</div>
-  <div><%= book.description %></div>
-</div>
-
-<a href="/books/<%= book.id %>/edit">Edit</a>
-<%- include("../partials/deleteForm", {
-            url: `/books/${book.id}`}) %>
-<a href="/authors/<%= book.author.id %>">View Author</a>

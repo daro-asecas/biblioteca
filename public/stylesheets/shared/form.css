@@ -11,7 +11,7 @@
 }
 
 .form-row-end {
-  justify-content: flex-end;
+  margin-left: auto;
 }
 
 .form-item {
@@ -68,7 +68,7 @@
 }
 
 .filepond--root {
-  font-family: 'Gotham Rounded';
+  font-family: "Gotham Rounded";
   margin-bottom: 0;
 }
 

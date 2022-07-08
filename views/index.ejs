@@ -1,6 +1,2 @@
 <h2>Recently Added</h2>
-<div>
-  <% books.forEach(book => { %>
-    <%- include("partials/bookPreview", {book: book}) %>
-  <% }) %>
-</div>
+<%- include("partials/bookGrid", {books: books, large: true}) %>

@@ -14,6 +14,7 @@
 
 .btn-row {
   display: flex;
+  width: fit-content;
   align-items: flex-start;
 }
 
@@ -32,6 +33,7 @@
   padding: .5rem 1rem;
   font-size: 1.2rem;
   font-family: "Gotham Rounded";
+  text-decoration: none;
   cursor: pointer;
   text-align: center;
 }
@@ -47,6 +49,7 @@
 }
 
 .btn-danger {
+  width: 100%;
   color: var(--color-btn-danger-text);
   background-color: var(--color-btn-danger-background);
 }
